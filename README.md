@@ -77,4 +77,4 @@ By the completion of this project I will have documented a complete SOC home lab
 
 ## Connect With Me
 
-**LinkedIn:** *(Add your profile link here)*
+**LinkedIn:** *(https://www.linkedin.com/in/david-derouselle/)*
