@@ -1,0 +1,9 @@
+soc-analyst-academy/
+│
+├── README.md
+│
+├── 01-Splunk-Fundamentals/
+│   ├── README.md
+│   ├── screenshots/
+│   ├── queries.md
+│   └── notes.md
