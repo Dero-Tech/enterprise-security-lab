@@ -1,21 +1,29 @@
-# soc--analyst-academy
+# soc-analyst-academy
 Hands-on SOC Analyst training lab focused on Splunk, threat hunting, detection engineering, incident response, and vulnerability management.
 soc-analyst-academy
 │
 ├── README.md
 │
-├── 01-Splunk-Installation
-├── 02-SPL-Basics
-├── 03-Searching-Logs
-├── 04-Windows-Events
-├── 05-Linux-Logs
-├── 06-Sysmon
-├── 07-Threat-Hunting
-├── 08-Vulnerability-Management
-├── 09-Detection-Engineering
-├── 10-Capstone-Investigation
+├── 01-Splunk-Fundamentals
+│   ├── README.md
+│   ├── screenshots
+│   ├── notes.md
+│   └── spl-queries.md
 │
-├── screenshots
-├── reports
-├── dashboards
-└── spl-queries
+├── 02-Searching-and-Filtering
+│
+├── 03-Windows-Event-Logs
+│
+├── 04-Linux-Authentication
+│
+├── 05-Sysmon
+│
+├── 06-Threat-Hunting
+│
+├── 07-Vulnerability-Management
+│
+├── 08-Detection-Engineering
+│
+├── 09-Incident-Response
+│
+└── Capstone
