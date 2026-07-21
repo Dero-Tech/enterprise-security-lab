@@ -1,19 +1,22 @@
-soc-analyst-academy/
+enterprise-security-lab
 │
-├── README.md
+├── README.md   ⭐
 │
-├── 01-Splunk-Fundamentals/
-│   ├── README.md
-│   ├── queries.md
-│   ├── notes.md
-│   └── screenshots/
+├── 01-Enterprise-Planning
 │
-├── 02-SPL-Basics/
-├── 03-Windows-Event-Logs/
-├── 04-Linux-Authentication/
-├── 05-Sysmon/
-├── 06-Threat-Hunting/
-├── 07-Vulnerability-Management/
-├── 08-Detection-Engineering/
-├── 09-Incident-Response/
-└── 10-Capstone/
+├── diagrams
+│
+├── docs
+│
+└── identity-platform
+    │
+    ├── README.md
+    ├── app
+    │   ├── database.py
+    │   ├── main.py
+    │   ├── models
+    │   ├── routers
+    │   └── schemas
+    │
+    ├── requirements.txt
+    └── tests
