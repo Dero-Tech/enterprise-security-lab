@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.database import get_db
+from app.dependencies import RoleChecker
 from app.models.user import User
 from app.schemas.user import UserCreate, UserResponse
 from app.security import hash_password
@@ -12,11 +13,22 @@ router = APIRouter(
     tags=["Users"],
 )
 
+can_create_users = RoleChecker(["IAM Administrator"])
+
+can_view_users = RoleChecker(
+    [
+        "IAM Administrator",
+        "Security Analyst",
+    ]
+)
+
 
 @router.get("/", response_model=list[UserResponse])
-def get_users(db: Session = Depends(get_db)):
+def get_users(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(can_view_users),
+):
     return db.query(User).all()
-
 
 @router.post(
     "/",
@@ -26,6 +38,7 @@ def get_users(db: Session = Depends(get_db)):
 def create_user(
     user: UserCreate,
     db: Session = Depends(get_db),
+    current_user: User = Depends(can_create_users),
 ):
     existing_user = (
         db.query(User)
