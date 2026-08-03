@@ -5,7 +5,8 @@ from app.auth import create_access_token
 from app.database import get_db
 from app.dependencies import get_current_user
 from app.models.user import User
-from app.schemas.user import Token, UserLogin
+from app.schemas.user import Token, UserLogin, UserResponse
+
 from app.security import verify_password
 
 
@@ -38,8 +39,7 @@ def login(
 
     token = create_access_token(
         {
-            "sub": user.email,
-            "role": user.role,
+            "sub": user.email,            
         }
     )
 
@@ -49,15 +49,8 @@ def login(
     }
 
 
-@router.get("/me")
+@router.get("/me", response_model=UserResponse)
 def get_authenticated_user(
     current_user: User = Depends(get_current_user),
 ):
-    return {
-        "id": current_user.id,
-        "email": current_user.email,
-        "first_name": current_user.first_name,
-        "last_name": current_user.last_name,
-        "department": current_user.department,
-        "role": current_user.role,
-    }
+    return current_user
