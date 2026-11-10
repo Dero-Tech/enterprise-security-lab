@@ -1,5 +1,44 @@
 # NorthStar Enterprise Identity & Security Lab
 
+## Quick Start
+
+### Requirements
+- Python 3.10+
+- Git
+
+### Run locally
+
+```bash
+git clone https://github.com/Dero-Tech/enterprise-security-lab.git
+cd enterprise-security-lab/identity-platform
+
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+
+python -m uvicorn app.main:app --reload
+```
+
+### API Documentation
+
+After starting the server, visit:
+
+http://127.0.0.1:8000/docs
+
+### Health Check
+
+GET http://127.0.0.1:8000/health
+
+Expected response:
+
+```json
+{"status": "healthy"}
+```
+
+This is a local development demonstration,
+not a production deployment.
+
+
 Enterprise-inspired Identity and Access Management platform built with FastAPI, SQLAlchemy, and Python.
 
 ## Current Features
