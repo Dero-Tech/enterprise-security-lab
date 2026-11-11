@@ -94,6 +94,23 @@ flowchart TD
 
 The application separates authentication from authorization. JWT authentication identifies users, while role-based permission checks determine which operations they can perform. SQLAlchemy manages database access.
 
+## RBAC Security Testing Evidence
+
+The following screenshot demonstrates an authenticated
+user attempting to access a protected user-management
+endpoint without the required `users:view` permission.
+
+The application returned HTTP 403 Forbidden, confirming
+that the request was denied by the RBAC permission check.
+
+![RBAC 403 Forbidden Test](diagrams/rbac-access-denied.png)
+
+An authorized administrator was separately verified
+to receive HTTP 200 for the same endpoint.
+
+**Testing status:** Manually verified using FastAPI
+Swagger UI with fictional test accounts.
+
   ### Planned improvements
 - Automated authentication and RBAC testing
 - Audit logging
