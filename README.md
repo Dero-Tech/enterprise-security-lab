@@ -73,7 +73,28 @@ These results were obtained through manual local testing. Automated regression t
 ### Security design
 The application separates authentication from authorization. JWTs establish the requesting user's identity, while permission checks determine which operations that identity may perform.
 
-### Planned improvements
+## System Architecture
+
+```mermaid
+flowchart TD
+    A["API Client / Swagger UI"]
+    B["FastAPI REST Endpoints"]
+    C["Authentication: Password Verification + JWT"]
+    D["Authorization: RBAC Permission Checks"]
+    E["SQLAlchemy ORM"]
+    F[("SQLite Database")]
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> E
+    E --> F
+```
+
+The application separates authentication from authorization. JWT authentication identifies users, while role-based permission checks determine which operations they can perform. SQLAlchemy manages database access.
+
+  ### Planned improvements
 - Automated authentication and RBAC testing
 - Audit logging
 - Identity lifecycle management
